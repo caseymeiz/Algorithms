@@ -28,11 +28,9 @@ A collection of algorithms implemented in Java
 * Topological Sort
 
 ## Dynamic Programming
-* 0-1 Knapsack
-* Edit (Levenshtein) Distance
+* Knapsack
 * Longest Increasing Subsequence
 * Longest Common Subsequence
-* Maximum Subset Sum
 
 
 ## Sorting
