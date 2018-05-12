@@ -10,9 +10,12 @@ A collection of algorithms implemented in Java
   + [Sorting](https://github.com/caseymeiz/Algorithms#sorting)
   + [Searching](https://github.com/caseymeiz/Algorithms#searching)
   + [Computational Geometry](https://github.com/caseymeiz/Algorithms#computational-geometry)
-
-* Resources
-  + [Books](https://github.com/caseymeiz/Algorithms#books)
+* Data Structures
+  + [Graph]()
+  + [Tree]()
+  + [Hash Table]()
+  + [Linked List]()
+  + [Union Find]()
 
 ## Graph
 * Graph Traversal
