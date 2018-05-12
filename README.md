@@ -1,4 +1,6 @@
-# Algorithms
+# Algorithms 
+[![Build Status](https://travis-ci.org/caseymeiz/Algorithms.svg?branch=master)](https://travis-ci.org/caseymeiz/Algorithms)
+
 A collection of algorithms implemented in Java
 
 ## Table of Contents
