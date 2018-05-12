@@ -47,3 +47,8 @@ A collection of algorithms implemented in Java
 
 ## Searching
 
+## License
+
+MIT License
+
+See LICENSE for details.
