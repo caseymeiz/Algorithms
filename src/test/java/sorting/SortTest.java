@@ -35,8 +35,6 @@ public class SortTest {
 	 * @param toBeSorted array of unsorted elements
 	 * @param expected sorted array of elements
 	 * @param <T> Type of elements to be sorted
-	 * @throws IllegalAccessException
-	 * @throws InstantiationException
 	 */
 	@ParameterizedTest
 	@MethodSource("sortProvider")
@@ -51,18 +49,25 @@ public class SortTest {
 	 * sorted array.
 	 */
 	static Stream<Arguments> sortProvider() {
+
 		BubbleSort bs = new BubbleSort();
 		SelectionSort ss = new SelectionSort();
-		return Stream.of(
-				Arguments.of(bs, INT_DECREASING_COMPARE, new Integer[]{1,2,3,4,5,6,7}, DECREASING_INT),
-				Arguments.of(bs, INT_INCREASING_COMPARE, new Integer[]{7,6,5,4,3,2,1}, INCREASING_INT),
-				Arguments.of(bs, ALPHABETICAL_COMPARE, new String[]{"d","c","b","a"}, ALPHABETICAL_STR),
-				Arguments.of(bs, REVERSE_ALPHABETICAL_COMPARE, new String[]{"a","b","c","d"}, REVERSE_ALPHABETICAL_STR),
 
-				Arguments.of(ss, INT_DECREASING_COMPARE, new Integer[]{1,2,3,4,5,6,7}, DECREASING_INT),
-				Arguments.of(ss, INT_INCREASING_COMPARE, new Integer[]{7,6,5,4,3,2,1}, INCREASING_INT),
-				Arguments.of(ss, ALPHABETICAL_COMPARE, new String[]{"d","c","b","a"}, ALPHABETICAL_STR),
-				Arguments.of(ss, REVERSE_ALPHABETICAL_COMPARE, new String[]{"a","b","c","d"}, REVERSE_ALPHABETICAL_STR)
+		return Stream.of(bs,ss).flatMap(SortTest::basicTests);
+	}
+
+	/**
+	 * Provides some basic tests
+	 *
+	 * @param sorter
+	 * @return
+	 */
+	static Stream<Arguments> basicTests(Sort sorter){
+		return Stream.of(
+				Arguments.of(sorter, INT_DECREASING_COMPARE, new Integer[]{1,2,3,4,5,6,7}, DECREASING_INT),
+				Arguments.of(sorter, INT_INCREASING_COMPARE, new Integer[]{7,6,5,4,3,2,1}, INCREASING_INT),
+				Arguments.of(sorter, ALPHABETICAL_COMPARE, new String[]{"d","c","b","a"}, ALPHABETICAL_STR),
+				Arguments.of(sorter, REVERSE_ALPHABETICAL_COMPARE, new String[]{"a","b","c","d"}, REVERSE_ALPHABETICAL_STR)
 		);
 	}
 }
