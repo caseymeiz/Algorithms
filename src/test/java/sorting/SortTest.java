@@ -5,6 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.stream.Stream;
 
@@ -40,7 +41,7 @@ public class SortTest {
 	@MethodSource("sortProvider")
 	<T> void sort(Sort sorter, Comparator<T> comparator, T[] toBeSorted, T[] expected) {
 		sorter.sort(toBeSorted, comparator);
-		assertArrayEquals(toBeSorted, expected);
+		assertArrayEquals(toBeSorted, expected, Arrays.toString(toBeSorted));
 	}
 
 
@@ -52,8 +53,9 @@ public class SortTest {
 
 		BubbleSort bs = new BubbleSort();
 		SelectionSort ss = new SelectionSort();
+		InsertionSort is = new InsertionSort();
 
-		return Stream.of(bs,ss).flatMap(SortTest::basicTests);
+		return Stream.of(bs,ss,is).flatMap(SortTest::basicTests);
 	}
 
 	/**
