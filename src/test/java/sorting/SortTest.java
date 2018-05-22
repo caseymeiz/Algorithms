@@ -54,8 +54,9 @@ public class SortTest {
 		BubbleSort bs = new BubbleSort();
 		SelectionSort ss = new SelectionSort();
 		InsertionSort is = new InsertionSort();
+		MergeSort ms = new MergeSort();
 
-		return Stream.of(bs,ss,is).flatMap(SortTest::basicTests);
+		return Stream.of(bs,ss,is,ms).flatMap(SortTest::basicTests);
 	}
 
 	/**
